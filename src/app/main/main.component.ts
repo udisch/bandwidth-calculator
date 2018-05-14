@@ -39,44 +39,47 @@ export class MainComponent implements OnInit {
   	this.updateTransferTime();
   }
 
-  convertTransferRate(): number {
-  	let result: number = this.transferRate;
+  // base unit is bits
+  convertTransferRate(transferRate: number): number {
+  	let result: number = transferRate;
   	switch (this.rateUnit) {
   		case 'Mbps':
-  			result *= 1000;
+  			result *= Math.pow(1000, 2);
   			break;
   		case 'Gbps':
-  			result *= Math.pow(1000, 2);
+  			result *= Math.pow(1000, 3);
   			break;
   	}
   	return result;
   }
 
-  convertDataAmount(): number {
-  	let result: number = this.dataAmount;
+  // base unit is bytes
+  convertDataAmount(dataAmount: number): number {
+  	let result: number = dataAmount;
   	switch (this.dataUnit) {
   		case 'MB':
-  			result *= 1024;
-  			break;
-  		case 'GB':
   			result *= Math.pow(1024, 2);
   			break;
-  		case 'TB':
+  		case 'GB':
   			result *= Math.pow(1024, 3);
+  			break;
+  		case 'TB':
+  			result *= Math.pow(1024, 4);
   			break;
   	}
   	return result;
   }
 
   updateTransferTime(): void {
-  	const amount = this.convertDataAmount();
-  	const rate = this.convertTransferRate();
+  	const amount = this.convertDataAmount(this.dataAmount);
+  	const rate = this.convertTransferRate(this.transferRate);
   	this.transferTime = this.calculator.transferTime(amount, rate);
   }
 
-  constructor(private calculator: CalculatorService,) { }
+  constructor(private calculator: CalculatorService) { }
 
   ngOnInit() {
+  	this.updateTransferTime();
   }
 
 }
