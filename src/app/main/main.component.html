@@ -1,15 +1,31 @@
 <div>
+	<p>
+	<label>Data Size Increment </label>
+	<mat-form-field>
+	<mat-select [(value)]="dataUnit" (selectionChange)="updateTransferTime()">
+    	<mat-option *ngFor="let size of dataSizes" [value]="size.viewValue">{{ size.viewValue }}</mat-option>
+    </mat-select>
+    </mat-form-field>
+    <label>Bandwith Rate Increment </label>
+	<mat-form-field>
+	<mat-select [(value)]="rateUnit" (selectionChange)="updateTransferTime()">
+    	<mat-option *ngFor="let rate of rates" [value]="rate.viewValue">{{ rate.viewValue }}</mat-option>
+    </mat-select>
+    </mat-form-field>
+	</p>
 	<div>
 	<label>Amount of Data:
-		<mat-slider min="1" max="1024" (input)="updateDataAmount($event)"></mat-slider><span>{{dataAmount}}</span>
+		<mat-slider min="1" max="1024" (input)="updateDataAmount($event)"></mat-slider>
+		<span> {{dataAmount}} {{ dataUnit }} </span>
 	</label>
 	</div>
 	<div>
 	<label>Transfer Rate:
-		<mat-slider min="1" max="1024" (input)="updateTransferRate($event)"></mat-slider><span>{{transferRate}}</span>
+		<mat-slider min="1" max="1000" (input)="updateTransferRate($event)"></mat-slider>
+		<span> {{transferRate}} {{ rateUnit }}</span>
 	</label>
 	</div>
 </div>
 <div>
-	<span>Transfer time:</span> {{transferTime}}
+	<span>Transfer time:</span> {{transferTime}} seconds
 </div>
