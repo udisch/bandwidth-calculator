@@ -39,40 +39,9 @@ export class MainComponent implements OnInit {
   	this.updateTransferTime();
   }
 
-  // base unit is bits
-  convertTransferRate(transferRate: number): number {
-  	let result: number = transferRate;
-  	switch (this.rateUnit) {
-  		case 'Mbps':
-  			result *= Math.pow(1000, 2);
-  			break;
-  		case 'Gbps':
-  			result *= Math.pow(1000, 3);
-  			break;
-  	}
-  	return result;
-  }
-
-  // base unit is bytes
-  convertDataAmount(dataAmount: number): number {
-  	let result: number = dataAmount;
-  	switch (this.dataUnit) {
-  		case 'MB':
-  			result *= Math.pow(1024, 2);
-  			break;
-  		case 'GB':
-  			result *= Math.pow(1024, 3);
-  			break;
-  		case 'TB':
-  			result *= Math.pow(1024, 4);
-  			break;
-  	}
-  	return result;
-  }
-
   updateTransferTime(): void {
-  	const amount = this.convertDataAmount(this.dataAmount);
-  	const rate = this.convertTransferRate(this.transferRate);
+  	const amount = this.calculator.convertDataAmount(this.dataAmount, this.dataUnit);
+  	const rate = this.calculator.convertTransferRate(this.transferRate, this.rateUnit);
   	this.transferTime = this.calculator.transferTime(amount, rate);
   }
 

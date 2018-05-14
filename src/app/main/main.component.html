@@ -14,13 +14,13 @@
     </mat-form-field>
 	</p>
 	<div>
-	<label>Amount of Data:
+	<label>Amount of Data (1-1024):
 		<mat-slider min="1" max="1024" (input)="updateDataAmount($event)"></mat-slider>
 		<span> {{dataAmount}} {{ dataUnit }} </span>
 	</label>
 	</div>
 	<div>
-	<label>Transfer Rate:
+	<label>Transfer Rate (1-1000):
 		<mat-slider min="1" max="1000" (input)="updateTransferRate($event)"></mat-slider>
 		<span> {{transferRate}} {{ rateUnit }}</span>
 	</label>
