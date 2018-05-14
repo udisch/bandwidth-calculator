@@ -1,31 +1,55 @@
 <div>
-	<p>
-	<label>Data Size Increment </label>
-	<mat-form-field>
-	<mat-select [(value)]="dataUnit" (selectionChange)="updateTransferTime()">
-    	<mat-option *ngFor="let size of dataSizes" [value]="size.viewValue">{{ size.viewValue }}</mat-option>
-    </mat-select>
-    </mat-form-field>
-    <label>Bandwith Rate Increment </label>
-	<mat-form-field>
-	<mat-select [(value)]="rateUnit" (selectionChange)="updateTransferTime()">
-    	<mat-option *ngFor="let rate of rates" [value]="rate.viewValue">{{ rate.viewValue }}</mat-option>
-    </mat-select>
-    </mat-form-field>
-	</p>
-	<div>
-	<label>Amount of Data (1-1024):
-		<mat-slider min="1" max="1024" (input)="updateDataAmount($event)"></mat-slider>
-		<span> {{dataAmount}} {{ dataUnit }} </span>
-	</label>
+	<div class="selection-area">
+		<span class="selection">
+		<label>Data Size Increment</label>
+		<mat-form-field>
+		<mat-select [(value)]="dataUnit" (selectionChange)="updateTransferTime()">
+	    	<mat-option *ngFor="let size of dataSizes" [value]="size.viewValue">{{ size.viewValue }}</mat-option>
+	    </mat-select>
+	    </mat-form-field>
+		</span>
+		<span class="selection">
+	    <label>Bandwith Rate Increment</label>
+		<mat-form-field>
+		<mat-select [(value)]="rateUnit" (selectionChange)="updateTransferTime()">
+	    	<mat-option *ngFor="let rate of rates" [value]="rate.viewValue">{{ rate.viewValue }}</mat-option>
+	    </mat-select>
+	    </mat-form-field>
+		</span>
 	</div>
-	<div>
-	<label>Transfer Rate (1-1000):
-		<mat-slider min="1" max="1000" (input)="updateTransferRate($event)"></mat-slider>
-		<span> {{transferRate}} {{ rateUnit }}</span>
-	</label>
+	<div class="container slider-area">
+		<div class="row">
+		<div class="col-md-3 slider-label">
+				<label>Amount of Data (1-1024):</label>
+		</div>
+		<div class="col-md-9">
+			<div>
+			<mat-slider min="1" max="1024" (input)="updateDataAmount($event)"></mat-slider>
+			<span>{{dataAmount}} {{ dataUnit }}</span>
+			</div>
+		</div>
+		</div>
+		<div class="row">
+		<div class="col-md-3 slider-label">
+				<label>Transfer Rate (1-1000):</label>
+		</div>
+		<div class="col-md-9">
+			<div>
+			<mat-slider min="1" max="1000" (input)="updateTransferRate($event)"></mat-slider>
+			<span>{{transferRate}} {{ rateUnit }}</span>
+			</div>
+		</div>
+		</div>
+		<div class="row slider-label">
+			<div class="col-md-3">
+			<label>
+				<span>Transfer time:</span>
+			</label>
+			</div>
+			<div class="col-md-9">
+			 {{transferTime | amDuration: 'seconds' }}
+			</div>
+		</div>
+		
 	</div>
-</div>
-<div>
-	<span>Transfer time:</span> {{transferTime | amDuration: 'seconds' }}
 </div>

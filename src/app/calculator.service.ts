@@ -41,8 +41,6 @@ export class CalculatorService {
 
   // inputs in bytes, bits per second. Output in seconds
   transferTime(dataAmount: number, transferRate: number): number {
-  	console.log(dataAmount);
-  	console.log(transferRate);
   	return (dataAmount / transferRate) * 8
   }
 
