@@ -1,0 +1,15 @@
+<div>
+	<div>
+	<label>Amount of data:
+			<input [(ngModel)]="dataAmount" placeholder="1" (change)="updateTransferTime()">
+	</label>
+	</div>
+	<div>
+	<label>Transfer rate:
+			<input [(ngModel)]="transferRate" placeholder="1" (change)="updateTransferTime()">
+	</label>
+	</div>
+</div>
+<div>
+	<span>Transfer time:</span> {{transferTime}}
+</div>
