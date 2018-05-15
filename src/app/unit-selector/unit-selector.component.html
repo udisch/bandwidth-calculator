@@ -1,0 +1,18 @@
+<div class="selection-area">
+	<span class="selection">
+	<label>Data Size Increment</label>
+	<mat-form-field>
+	<mat-select [(value)]="dataUnit" (selectionChange)="change()">
+    	<mat-option *ngFor="let size of dataSizes" [value]="size.viewValue">{{ size.viewValue }}</mat-option>
+    </mat-select>
+    </mat-form-field>
+	</span>
+	<span class="selection">
+    <label>Bandwith Rate Increment</label>
+	<mat-form-field>
+	<mat-select [(value)]="rateUnit" (selectionChange)="change()">
+    	<mat-option *ngFor="let rate of rates" [value]="rate.viewValue">{{ rate.viewValue }}</mat-option>
+    </mat-select>
+    </mat-form-field>
+	</span>
+</div>

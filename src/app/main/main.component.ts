@@ -15,28 +15,21 @@ export class MainComponent implements OnInit {
   transferTime: number = 0;
   dataUnit: string = 'GB';
   rateUnit: string = 'Mbps';
-
-  dataSizes = [
-    {value: '0', viewValue: 'KB'},
-    {value: '1', viewValue: 'MB'},
-    {value: '2', viewValue: 'GB'},
-    {value: '3', viewValue: 'TB'},
-  ];
-
-  rates = [
-    {value: '0', viewValue: 'Kbps'},
-    {value: '1', viewValue: 'Mbps'},
-    {value: '2', viewValue: 'Gbps'},
-  ];
-
+  
   updateDataAmount(event: any): void {
-  	this.dataAmount = event.value;
-  	this.updateTransferTime();
+    this.dataAmount = event.value;
+    this.updateTransferTime();
   }
 
   updateTransferRate(event: any): void {
-  	this.transferRate = event.value;
-  	this.updateTransferTime();
+    this.transferRate = event.value;
+    this.updateTransferTime();
+  }
+
+  updateUnits(event: any): void {
+    this.rateUnit = event.rateUnit;
+    this.dataUnit = event.dataUnit;
+    this.updateTransferTime();
   }
 
   updateTransferTime(): void {

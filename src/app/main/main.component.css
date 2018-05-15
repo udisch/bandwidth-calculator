@@ -1,18 +1,3 @@
-.selection {
-	font-size: 21px;
-	margin: 0 3em 0 0;
-}
-
-.selection-area {
-	border: 5px green;
-	border-bottom-style: solid;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	padding-left: 10px;
-	margin-left: 10px;
-	display: inline-block;
-}
-
 .slider-area {
 	padding-top: 25px;
 	margin-left: 0px;
@@ -20,10 +5,6 @@
 
 .slider-label {
 	margin-top: 10px;
-}
-
-.mat-form-field {
-	padding-left: 15px;
 }
 
 .mat-slider-horizontal {
