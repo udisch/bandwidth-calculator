@@ -11,14 +11,12 @@ import { MomentModule } from 'angular2-moment';
 
 import 'hammerjs';
 import { UnitSelectorComponent } from './unit-selector/unit-selector.component';
-import { SliderAreaComponent } from './slider-area/slider-area.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     UnitSelectorComponent,
-    SliderAreaComponent,
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, FormsModule, 
