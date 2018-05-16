@@ -4,7 +4,7 @@
 }
 
 .selection-area {
-	border: 5px green;
+	border: 5px rgb(60, 150, 60);
 	border-bottom-style: solid;
 	padding-top: 15px;
 	padding-bottom: 15px;
@@ -13,19 +13,10 @@
 	display: inline-block;
 }
 
-.slider-area {
-	padding-top: 25px;
-	margin-left: 0px;
-}
-
-.slider-label {
-	margin-top: 10px;
-}
-
 .mat-form-field {
 	padding-left: 15px;
 }
 
-.mat-slider-horizontal {
-	min-width: 520px;
+.row {
+	margin-bottom: 15px;
 }

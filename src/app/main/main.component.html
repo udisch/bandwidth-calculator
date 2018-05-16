@@ -24,8 +24,8 @@
 		</div>
 		<div class="col-md-9">
 			<div>
-			<mat-slider min="1" max="1024" (input)="updateDataAmount($event)"></mat-slider>
-			<span>{{dataAmount}} {{ dataUnit }}</span>
+			<input type="range" min="1" max="1024" value="1" (input)="updateDataAmount($event)" class="slider">
+			<span class="slider-output">{{dataAmount}} {{ dataUnit }}</span>
 			</div>
 		</div>
 		</div>
@@ -35,8 +35,8 @@
 		</div>
 		<div class="col-md-9">
 			<div>
-			<mat-slider min="1" max="1000" (input)="updateTransferRate($event)"></mat-slider>
-			<span>{{transferRate}} {{ rateUnit }}</span>
+			<input type="range" min="1" max="1000" value="1" (input)="updateTransferRate($event)" class="slider">
+			<span class="slider-output">{{transferRate}} {{ rateUnit }}</span>
 			</div>
 		</div>
 		</div>

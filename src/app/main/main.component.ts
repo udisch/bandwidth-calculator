@@ -30,12 +30,12 @@ export class MainComponent implements OnInit {
   ];
 
   updateDataAmount(event: any): void {
-  	this.dataAmount = event.value;
+  	this.dataAmount = event.target.value;
   	this.updateTransferTime();
   }
 
   updateTransferRate(event: any): void {
-  	this.transferRate = event.value;
+  	this.transferRate = event.target.value;
   	this.updateTransferTime();
   }
 

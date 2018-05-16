@@ -1,16 +1,38 @@
-/* override Angular material pink slider */
-.slider-area .mat-slider-track-fill {
-    background-color: #BABABA;
+.slider-area {
+	padding-top: 25px;
+	margin-left: 0px;
 }
 
-.slider-area .mat-slider-thumb {
-    background-color: #337ab7;
-}
-
-/* 
-.slider-area .mat-slider-horizontal .mat-slider-track-background, 
-.slider-area .mat-slider-horizontal .mat-slider-track-wrapper,
-.slider-area .mat-slider-horizontal .mat-slider-track-fill {
+.slider {
+    -webkit-appearance: none;
+    width: 70%;
     height: 15px;
-    border-radius: 25px;
-} */
+    border-radius: 5px;   
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: rgb(64, 97, 141);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider-output {
+    padding-left: 15px;
+}

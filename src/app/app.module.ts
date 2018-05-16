@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-import { MatSliderModule } from '@angular/material/slider';
 import { GestureConfig } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
 import { MomentModule } from 'angular2-moment';
@@ -18,7 +17,7 @@ import 'hammerjs';
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, FormsModule, 
-    MatSliderModule, MatSelectModule, MomentModule
+    MatSelectModule, MomentModule,
   ],
   providers: [
   ],
